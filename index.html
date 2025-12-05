@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ জন্মদিন, আপু! ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="slide1" class="slide active">
+        <h1>আমার প্রিয় বোনের জন্য একটি বার্তা...</h1>
+        <video id="birthdayVideo" controls>
+            <source src="bday_video.mp4" type="video/mp4">
+            আপনার ব্রাউজার ভিডিওটি সমর্থন করছে না।
+        </video>
+        <button class="next-button" onclick="showNextSlide()">পরের চমক!</button>
+    </div>
+
+    <div id="slide2" class="slide">
+        <h1>কেক এবং মোমবাতি আসছে...</h1>
+    </div>
+
+    <div id="slide3" class="slide">
+        <h1>ফুল এবং বার্তা আসছে...</h1>
+    </div>
+
+    <div id="slide4" class="slide">
+        <h1>শেষ শুভেচ্ছা...</h1>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+
+        function showNextSlide() {
+            // বর্তমান স্লাইড লুকানো
+            document.getElementById('slide' + currentSlide).classList.remove('active');
+
+            // পরবর্তী স্লাইডে যাওয়া
+            currentSlide++;
+
+            if (currentSlide <= 4) {
+                // নতুন স্লাইড দেখানো
+                document.getElementById('slide' + currentSlide).classList.add('active');
+            } else {
+                // স্লাইড শেষ হলে প্রথম স্লাইডে ফিরে যাওয়া বা কিছু দেখানো
+                alert("সব শুভেচ্ছা দেখা শেষ! ❤️");
+                currentSlide = 1;
+                document.getElementById('slide' + currentSlide).classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
