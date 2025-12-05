@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    overflow: hidden; /* স্লাইডশো এর জন্য স্ক্রলবার লুকানো */
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+    display: none; /* ডিফল্টভাবে সব স্লাইড লুকানো থাকবে */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #CC0000; /* গাড় লাল থিম */
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    display: flex; /* শুধু একটিভ স্লাইড দেখানো হবে */
+}
+
+/* স্লাইড ১ - ভিডিও স্লাইড */
+#slide1 video {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 5px solid #FFD700; /* সোনালী বর্ডার */
+}
+
+.next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FFD700; /* সোনালী বাটন */
+    color: #CC0000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.next-button:hover {
+    background-color: #FFC400;
+}
