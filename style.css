@@ -41,3 +41,73 @@ body {
 .next-button:hover {
     background-color: #FFC400;
 }
+
+/* কেক এবং মোমবাতি স্টাইল (স্লাইড ২) */
+.cake-container {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    margin: 30px auto;
+}
+
+.cake {
+    width: 250px;
+    height: 150px;
+    background: #ffccff; /* কেকের রং */
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    box-shadow: 0 5px 0 #cc99cc;
+}
+
+.candle {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    margin-left: -5px;
+    width: 10px;
+    height: 50px;
+    background: white;
+    border-radius: 3px;
+    z-index: 10;
+}
+
+.flame {
+    width: 10px;
+    height: 20px;
+    background: orange;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    box-shadow: 0 0 10px yellow, 0 0 20px orange;
+    animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker {
+    from {
+        transform: scale(1.0);
+        opacity: 0.9;
+    }
+    to {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.flame.out {
+    opacity: 0;
+    box-shadow: none;
+    transition: opacity 0.5s;
+}
+
+#blowButton {
+    background-color: #f7a77e;
+    color: #4a2d1d;
+}
+
+/* স্লাইড ২ এর টেক্সটের স্টাইল */
+#slide2 h2 {
+    color: #FFD700; /* সোনালী রং */
+}
