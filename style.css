@@ -111,3 +111,37 @@ body {
 #slide2 h2 {
     color: #FFD700; /* সোনালী রং */
 }
+/* স্লাইড ৪ - অ্যানিমেশন স্টাইল */
+.blessing-box,
+#slide4 h3,
+#slide4 p {
+    opacity: 0;
+    animation: fadeIn 3s forwards; /* টেক্সট ধীরে ধীরে দেখা যাবে */
+    margin: 15px auto;
+    max-width: 80%;
+}
+
+.blessing-box {
+    animation-delay: 0.5s; /* সামান্য দেরি করে শুরু হবে */
+}
+
+#slide4 p {
+    animation-delay: 2.5s; /* পরে শুরু হবে */
+}
+
+#slide4 h3 {
+    animation-delay: 4.5s; /* সবার শেষে শুরু হবে */
+    color: #FFD700; /* সোনালী রং */
+    font-size: 1.5em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
