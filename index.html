@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ জন্মদিন, বোন উপম! ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="slide1" class="slide active">
+        <h1>Happy Birthday My Dear Cute Sweet Pagli Kolija Upom Bon...</h1>
+        <video id="birthdayVideo" controls>
+            <source src="bday_video.mp4" type="video/mp4">
+            আপনার ব্রাউজার ভিডিওটি সমর্থন করছে না।
+        </video>
+        <button class="next-button" onclick="showNextSlide()">পরের চমক!</button>
+    </div>
+
+    <div id="slide2" class="slide">
+        <h2>**“Every time you smile, something inside me heals.”**</h2>
+        <div class="cake-container">
+            <div class="cake"></div>
+            <div id="candle1" class="candle">
+                <div id="flame1" class="flame"></div>
+            </div>
+        </div>
+
+        <button id="blowButton" class="next-button" onclick="blowOutCandle()">ফুঁ দিন! (বাটন প্রেস করুন)</button>
+
+        <h3 style="margin-top: 20px; font-weight: normal;">**“You don’t just exist in my life… you exist in my heartbeat.”**</h3>
+    </div>
+
+    <div id="slide3" class="slide">
+        <h1>প্রিয় উপমা বোন,</h1>
+        <img src="flower.png" alt="Beautiful Flowers" style="max-width: 50%; height: auto; margin-bottom: 20px;"> 
+        
+        <p style="max-width: 70%; font-size: 1.5em; line-height: 1.6;">
+            **“You grew into a woman I’m endlessly proud of.<br>But a part of me still cries quietly…<br>wishing I could protect you from everything.”**
+        </p>
+        <p style="font-style: italic;">
+            **“I miss you in ways I don’t even understand myself.<br>Some people leave a mark…<br>you left a whole universe inside me.”**
+        </p>
+        <h3>**“Some connections are written by fate.<br>Ours was written by the heart.”**</h3>
+        <button class="next-button" onclick="showNextSlide()">শেষ চমক!</button>
+    </div>
+
+    <div id="slide4" class="slide">
+        <div class="blessing-box">
+            <h2>Again Happy birthday dear:</h2>
+            <p style="font-size: 1.8em; font-weight: bold;">
+                **“May life be gentle with you this year. ... always”**
+            </p>
+        </div>
+        
+        <p style="font-size: 1.2em; font-style: italic;">
+            **“You’ve stayed in my life like a soft, unshakable truth. ... never leaves.”**
+        </p>
+        
+        <h3 style="margin-top: 50px; border-top: 2px solid white; padding-top: 10px;">
+            **"For you, I’d cross storms. For you, I’d fight the sky. For you… I’d choose this life again."**
+        </h3>
+        <p>
+            **“No matter where life takes us, no matter who we become…<br>my heart will always return to you.””**
+        </p>
+        <p style="font-weight: bold; margin-top: 20px;">— Vabna</p>
+    </div>
+    
+    <script>
+        let currentSlide = 1;
+
+        function showNextSlide() {
+            // বর্তমান স্লাইড লুকানো
+            document.getElementById('slide' + currentSlide).classList.remove('active');
+            
+            // পরবর্তী স্লাইডে যাওয়া
+            currentSlide++;
+
+            if (currentSlide <= 4) {
+                // নতুন স্লাইড দেখানো
+                document.getElementById('slide' + currentSlide).classList.add('active');
+            } else {
+                // স্লাইড শেষ হলে চূড়ান্ত বার্তা ও রিসেট
+                alert("আজও অনেক ভালোবাসি তোমাকে ! তুমি সবসময় ভালো থেকো বোন। অনেক ভালোবাসা! You're my heaven in human form ❤️");
+                
+                // স্লাইড ১ এ ফিরে যাওয়া
+                currentSlide = 1; 
+                document.getElementById('slide' + currentSlide).classList.add('active');
+                
+                // মোমবাতি রিসেট
+                document.getElementById('flame1').classList.remove('out'); 
+                document.getElementById('blowButton').innerText = "ফুঁ দিন! (বাটন প্রেস করুন)";
+                document.getElementById('blowButton').onclick = blowOutCandle;
+            }
+        }
+        
+        function blowOutCandle() {
+            document.getElementById('flame1').classList.add('out');
+            document.getElementById('blowButton').innerText = "মোমবাতি নিভেছে! ❤️";
+            // মোমবাতি নেভার পর পরের স্লাইডে যাওয়ার ব্যবস্থা
+            document.getElementById('blowButton').onclick = showNextSlide; 
+            document.getElementById('blowButton').style.backgroundColor = '#FFD700'; 
+        }
+    </script>
+
+</body>
+</html>
