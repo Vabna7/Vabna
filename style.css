@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    overflow: hidden; 
+    font-family: 'Georgia', serif; 
+    color: white;
+}
+
+/* --- ভিজ্যুয়াল ইফেক্ট স্টাইল --- */
+
+#balloon-container, #confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 50; 
+}
+
+/* বেলুনের মূল স্টাইল */
+.balloon {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ff69b4;
+    bottom: -100px;
+    opacity: 0.8;
+    z-index: 55;
+    animation: ascend linear infinite;
+}
+
+.balloon-string {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 1px;
+    height: 30px;
+    background: white;
+}
+
+@keyframes ascend {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* কনফেটি স্টাইল */
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    opacity: 0;
+    z-index: 60;
+    border-radius: 2px;
+    animation: fall ease-out forwards;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+/* --- স্লাইডশো ডিজাইন (Grand Red Theme) --- */
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* গাড় লাল থেকে ডিপ মেরুন গ্রেডিয়েন্ট */
+    background: linear-gradient(135deg, #CC0000 0%, #8B0000 100%); 
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 10; 
+}
+
+.slide.active {
+    display: flex; 
+    opacity: 1;
+}
+
+h1 {
+    font-size: 2.5em; 
+    color: #FFD700; /* সোনালী */
+    margin-bottom: 20px;
+    /* জমকালো গ্লো ইফেক্ট */
+    text-shadow: 0 0 10px #FFC400, 0 0 20px #FF0000; 
+}
+
+h2 {
+    font-size: 1.6em;
+    color: #FFECB3; /* হালকা সোনালী */
+}
+
+/* স্লাইড ১ ভিডিও স্টাইল */
+#slide1 video {
+    max-width: 90%;
+    max-height: 70vh;
+    border: 7px solid #FFD700; /* মোটা সোনালী বর্ডার */
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8); /* ব্রাইটার গ্লো */
+    border-radius: 15px; 
+}
+
+.next-button {
+    margin-top: 30px;
+    padding: 15px 30px; 
+    background-color: #FFD700; /* উজ্জ্বল সোনালী বাটন */
+    color: #8B0000; /* গাড় লাল টেক্সট */
+    border: 3px solid #CC0000; /* লাল বর্ডার */
+    border-radius: 50px; 
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+.next-button:hover {
+    background-color: #FFC400; 
+    transform: scale(1.08); 
+}
+
+/* স্লাইড ২: কেক এবং মোমবাতি স্টাইল */
+#slide2 h2 {
+    color: #FFD700; 
+}
+
+.cake {
+    background: #FFB6C1; 
+    box-shadow: 0 5px 0 #E74C3C; /* গাড় লাল বেস */
+}
+
+.candle {
+    background: #FFD700; 
+}
+
+.flame {
+    box-shadow: 0 0 10px yellow, 0 0 20px #FFD700; 
+}
+
+#blowButton {
+    background-color: #CC0000; /* ডিপ রেড বাটন */
+    color: white;
+}
+#blowButton:hover {
+    background-color: #A00000;
+}
+
+/* স্লাইড ৪ - অ্যানিমেশন এবং স্টাইল */
+#slide4 h3 {
+    color: #FFD700; 
+    font-size: 1.8em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
