@@ -143,17 +143,106 @@ h2 {
     color: #FFD700; 
 }
 
-.cake {
-    background: #FFB6C1; 
-    box-shadow: 0 5px 0 #E74C3C; /* গাড় লাল বেস */
+/* কেক কন্টেইনার - কেককে পজিশন করতে এটি আবশ্যক */
+
+.cake-container { 
+
+    position: relative;
+
+    width: 300px;
+
+    height: 250px;
+
+    margin: 30px auto;
+
 }
 
-.candle {
-    background: #FFD700; 
+
+
+/* কেকের মূল বডি */
+
+.cake {
+
+    width: 250px;
+
+    height: 150px;
+
+    background: #FFB6C1; /* হালকা গোলাপি ফ্রস্টিং */
+
+    border-radius: 5px;
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 25px;
+
+    box-shadow: 0 5px 0 #E74C3C; /* গাড় লাল বেস */
+
 }
+
+
+
+/* মোমবাতি */
+
+.candle { 
+
+    position: absolute;
+
+    bottom: 150px; /* কেকের উপরে পজিশন */
+
+    left: 50%;
+
+    margin-left: -5px;
+
+    width: 10px;
+
+    height: 50px;
+
+    background: #FFD700; /* সোনালী মোমবাতি */
+
+    border-radius: 3px;
+
+    z-index: 10;
+
+}
+
+
+
+/* মোমবাতির শিখা */
 
 .flame {
+
+    width: 10px;
+
+    height: 20px;
+
+    background: #FF8C00; 
+
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+
+    position: absolute;
+
+    top: -15px;
+
+    left: 0;
+
     box-shadow: 0 0 10px yellow, 0 0 20px #FFD700; 
+
+    animation: flicker 0.5s infinite alternate;
+
+}
+
+
+
+.flame.out {
+
+    opacity: 0;
+
+    box-shadow: none;
+
+    transition: opacity 0.5s;
+
 }
 
 #blowButton {
