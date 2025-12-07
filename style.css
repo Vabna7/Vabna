@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    overflow: hidden; 
+    font-family: 'Georgia', serif; 
+    color: white;
+}
+
+/* --- ভিজ্যুয়াল ইফেক্ট স্টাইল --- */
+
+/* বেলুন ও কনফেটি কন্টেইনার */
+#balloon-container, #confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 50; 
+}
+
+/* বেলুনের মূল স্টাইল */
+.balloon {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ff69b4;
+    bottom: -100px;
+    opacity: 0.8;
+    z-index: 55;
+    animation: ascend linear infinite;
+}
+
+.balloon-string {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 1px;
+    height: 30px;
+    background: white;
+}
+
+@keyframes ascend {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* কনফেটি (বাজি/ফানুস) স্টাইল */
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    opacity: 0;
+    z-index: 60;
+    border-radius: 2px;
+    animation: fall ease-out forwards;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+/* --- স্লাইডশো ডিজাইন (Elegant Dark Mode) --- */
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1A237E 0%, #4527A0 100%); 
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 10; 
+}
+
+.slide.active {
+    display: flex; 
+    opacity: 1;
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #FFD700; 
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #BDBDBD; 
+}
+
+#slide1 video {
+    max-width: 90%;
+    max-height: 70vh;
+    border: 5px solid #FFD700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); 
+    border-radius: 10px;
+}
+
+.next-button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #9B59B6; 
+    color: white;
+    border: none;
+    border-radius: 50px; 
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.next-button:hover {
+    background-color: #8E44AD; 
+    transform: scale(1.05);
+}
+
+/* স্লাইড ২: কেক এবং মোমবাতি স্টাইল */
+#slide2 h2 {
+    color: #FFD700; 
+}
+.cake-container {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    margin: 30px auto;
+}
+
+.cake {
+    width: 250px;
+    height: 150px;
+    background: #FFB6C1; 
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    box-shadow: 0 5px 0 #E9967A; 
+}
+
+.candle {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    margin-left: -5px;
+    width: 10px;
+    height: 50px;
+    background: #FFD700; 
+    border-radius: 3px;
+    z-index: 10;
+}
+
+.flame {
+    width: 10px;
+    height: 20px;
+    background: #FF8C00; 
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    box-shadow: 0 0 10px yellow, 0 0 20px #FFD700; 
+    animation: flicker 0.5s infinite alternate;
+}
+
+.flame.out {
+    opacity: 0;
+    box-shadow: none;
+    transition: opacity 0.5s;
+}
+
+#blowButton {
+    background-color: #E74C3C; 
+}
+
+/* স্লাইড ৪ - অ্যানিমেশন এবং স্টাইল */
+.blessing-box,
+#slide4 h3,
+#slide4 p {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    margin: 15px auto;
+    max-width: 80%;
+}
+
+.blessing-box {
+    animation-delay: 0.5s; 
+}
+
+#slide4 p {
+    animation-delay: 1.5s; 
+}
+
+#slide4 h3 {
+    animation-delay: 3s; 
+    color: #FFD700; 
+    font-size: 1.5em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
